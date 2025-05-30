@@ -2,6 +2,7 @@
 
 // import { Button } from "@/components/ui/button";
 import { useQuery } from '@tanstack/react-query';
+import axiosInstance from '@/lib/axiosInstance';
 
 interface Todo {
   userId: number;
@@ -14,9 +15,11 @@ export default function Home() {
   const { data, isLoading, error } = useQuery<Todo[], Error>({
     queryKey: ['test'],
     queryFn: () =>
-      fetch('https://jsonplaceholder.typicode.com/todos?_limit=5').then((res) =>
-        res.json()
-      ),
+      axiosInstance
+        .get('https://jsonplaceholder.typicode.com/todos?_limit=5')
+        .then((res) => {
+          return res.data;
+        }),
   });
 
   return (
