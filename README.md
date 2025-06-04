@@ -20,6 +20,24 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Storybook
+
+Run Storybook to develop components in isolation:
+
+```bash
+npm run storybook
+```
+
+This starts a local server on [http://localhost:6006](http://localhost:6006).
+
+To generate static Storybook files, run:
+
+```bash
+npm run build-storybook
+```
+
+The static site is written to the `storybook-static` directory.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
