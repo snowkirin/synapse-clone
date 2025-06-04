@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 
 const queryClient = new QueryClient();
 
-export const TanstackQueryProvider = ({
+export const TanStackQueryProvider = ({
   children,
 }: {
   children: ReactNode
