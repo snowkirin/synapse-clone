@@ -3,6 +3,7 @@
 // import { Button } from "@/components/ui/button";
 import { useQuery } from '@tanstack/react-query';
 import axiosInstance from '@/lib/axiosInstance';
+import { Button } from '@/components/ui/button';
 
 interface Todo {
   userId: number;
@@ -24,6 +25,7 @@ export default function Home() {
 
   return (
     <div className='flex min-h-screen flex-col items-center justify-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20'>
+      <Button color='red'>Button</Button>
       <div className='w-full max-w-md'>
         <h1 className='text-cool-gray-500 mb-4 text-center text-2xl font-semibold sm:text-left'>
           Todos

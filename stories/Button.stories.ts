@@ -15,7 +15,19 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  argTypes: {},
+  argTypes: {
+    disabled: {
+      control: 'boolean',
+    },
+    color: {
+      control: 'select',
+      options: ['blue', 'red', 'green', 'yellow'],
+    },
+    variant: {
+      control: 'select',
+      options: ['solid', 'tint', 'outline', 'ghost'],
+    },
+  },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
@@ -29,6 +41,7 @@ export const Solid: Story = {
     variant: 'solid',
     size: 'md',
     rounded: 'default',
+    color: 'blue',
     children: 'Button',
   },
 };

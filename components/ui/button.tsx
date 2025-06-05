@@ -19,7 +19,7 @@ const buttonVariants = cva(
       variant: {
         solid: null,
         tint: null,
-        outline: 'border bg-background border-slate-300',
+        outline: 'border bg-background',
         ghost: null,
       },
       size: {
@@ -34,90 +34,94 @@ const buttonVariants = cva(
       },
     },
     compoundVariants: [
-      // Solid variants
+      // Solid variants (complete)
       {
         color: 'blue',
         variant: 'solid',
-        class: 'bg-blue-600 text-white hover:bg-blue-700',
+        class:
+          'bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 disabled:bg-blue-400',
       },
       {
         color: 'red',
         variant: 'solid',
-        class: 'bg-red-600 text-white hover:bg-red-700',
+        class:
+          'bg-red-600 text-white hover:bg-red-700 active:bg-red-800 disabled:bg-red-400',
       },
-      {
-        color: 'green',
-        variant: 'solid',
-        class: 'bg-green-600 text-white hover:bg-green-700',
-      },
-      {
-        color: 'yellow',
-        variant: 'solid',
-        class: 'bg-yellow-600 text-white hover:bg-yellow-700',
-      },
-      // Tint variants
+      // Tint variants (complete)
       {
         color: 'blue',
         variant: 'tint',
-        class: 'bg-blue-100 text-blue-700 hover:bg-blue-200',
+        class:
+          'bg-blue-200 text-blue-600 hover:bg-blue-300 active:bg-blue-400 disabled:bg-blue-200 disabled:text-blue-400',
       },
       {
         color: 'red',
         variant: 'tint',
-        class: 'bg-red-100 text-red-700 hover:bg-red-200',
+        class:
+          'bg-red-200 text-red-600 hover:bg-red-300 active:bg-red-400 disabled:bg-red-200 disabled:text-red-400',
       },
       {
         color: 'green',
         variant: 'tint',
-        class: 'bg-green-100 text-green-700 hover:bg-green-200',
+        class:
+          'bg-green-200 text-green-600 hover:bg-green-300 active:bg-green-400 disabled:bg-green-200 disabled:text-green-400',
       },
       {
         color: 'yellow',
         variant: 'tint',
-        class: 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200',
+        class:
+          'bg-yellow-200 text-yellow-600 hover:bg-yellow-300 active:bg-yellow-400 disabled:bg-yellow-200 disabled:text-yellow-400',
       },
-      // Outline variants
+      // Outline variants (complete)
       {
         color: 'blue',
         variant: 'outline',
-        class: 'border-blue-300 text-blue-600 hover:bg-blue-50',
+        class:
+          'border-slate-300 text-blue-600 hover:border-blue-300 active:bg-blue-200 active:border-blue-500 disabled:border-slate-300 disabled:text-blue-400',
       },
       {
         color: 'red',
         variant: 'outline',
-        class: 'border-red-300 text-red-600 hover:bg-red-50',
+        class:
+          'border-red-300 text-red-600 hover:bg-red-200 active:bg-red-300 disabled:border-red-300 disabled:text-red-400',
       },
       {
         color: 'green',
         variant: 'outline',
-        class: 'border-green-300 text-green-600 hover:bg-green-50',
+        class:
+          'border-green-300 text-green-600 hover:bg-green-200 active:bg-green-300 disabled:border-green-300 disabled:text-green-400',
       },
       {
         color: 'yellow',
         variant: 'outline',
-        class: 'border-yellow-300 text-yellow-600 hover:bg-yellow-50',
+        class:
+          'border-yellow-300 text-yellow-600 hover:bg-yellow-200 active:bg-yellow-300 disabled:border-yellow-300 disabled:text-yellow-400',
       },
 
-      // Ghost variants
+      // Ghost variants (complete)
       {
         color: 'blue',
         variant: 'ghost',
-        class: 'text-blue-600 hover:bg-blue-100',
+        class:
+          'text-blue-600 hover:bg-blue-200 hover:text-blue-600 active:bg-blue-300 active:text-blue-600 disabled:text-blue-400',
       },
       {
         color: 'red',
         variant: 'ghost',
-        class: 'text-red-600 hover:bg-red-100',
+        class:
+          'text-red-600 hover:bg-red-200 hover:text-red-600 active:bg-red-300 active:text-red-600 disabled:text-red-400',
       },
       {
         color: 'green',
         variant: 'ghost',
-        class: 'text-green-600 hover:bg-green-100',
+        class:
+          'text-green-600 hover:bg-green-200 hover:text-green-600 active:bg-green-300 active:text-green-600 disabled:text-green-400',
       },
       {
         color: 'yellow',
         variant: 'ghost',
-        class: 'text-yellow-600 hover:bg-yellow-100',
+        class:
+          'text-yellow-600 hover:bg-yellow-200 hover:text-yellow-600 active:bg-yellow-300 active:text-yellow-600 disabled:text-yellow-400',
       },
     ],
     defaultVariants: {
@@ -133,6 +137,8 @@ function Button({
   className,
   variant,
   size,
+  color,
+  rounded,
   asChild = false,
   ...props
 }: React.ComponentProps<'button'> &
@@ -148,6 +154,8 @@ function Button({
         buttonVariants({
           variant,
           size,
+          color,
+          rounded,
           className,
         })
       )}
